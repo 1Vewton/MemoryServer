@@ -3,15 +3,23 @@ package unstructured
 import (
 	"context"
 
+	"github.com/1Vewton/MemoryServer/pkg/knowledge"
 	"github.com/1Vewton/MemoryServer/pkg/memory"
 )
 
-// MemoryDB defines the interface of database for storing unstructured message memory
-type MemoryDB interface {
+// UnstructuredDB defines the connection for unstructured db
+type UnstructuredDB interface {
 	New(
 		ctx context.Context,
 		databaseURL string,
 	) error
+	Close(
+		ctx context.Context,
+	) error
+}
+
+// MemoryDB defines the interface of database for storing unstructured message memory
+type MemoryDB interface {
 	NewMessage(
 		ctx context.Context,
 		msg *memory.MessageMemory,
@@ -20,12 +28,8 @@ type MemoryDB interface {
 
 // KnowledgeDB defines the interface of database for storing knowledge
 type KnowledgeDB interface {
-	New(
-		ctx context.Context,
-		databaseURL string,
-	) error
 	NewKnowledge(
 		ctx context.Context,
-		knowledge *memory.Knowledge,
+		knowledge *knowledge.Piece,
 	) error
 }

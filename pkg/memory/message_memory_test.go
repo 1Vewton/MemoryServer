@@ -8,6 +8,7 @@ import (
 func TestMessageMemory(t *testing.T) {
 	t.Parallel()
 	newMessage := NewMessage(
+		"114514",
 		"abc",
 		"cde",
 	).SwitchSharedState()

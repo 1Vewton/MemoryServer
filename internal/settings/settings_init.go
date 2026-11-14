@@ -5,7 +5,7 @@ package settings
 import (
 	"fmt"
 
-	"github.com/1Vewton/MemoryServer/pkg/logger"
+	"github.com/1Vewton/MemoryServer/internal/logger"
 )
 
 // Read the .env file

@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/1Vewton/MemoryServer/pkg/logger"
+	"github.com/1Vewton/MemoryServer/internal/logger"
 )
 
 // GetEnvString returns the string value stored in the environment
